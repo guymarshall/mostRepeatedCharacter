@@ -1,7 +1,5 @@
 from pprint import pprint
 
-# sentence = "This is a common interview question"
-
 filename = input("Enter a filename to scan: ")
 file = open(filename, "r")
 sentence = file.read()
