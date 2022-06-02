@@ -1,20 +1,19 @@
 from pprint import pprint
 
-filename = input("Enter a filename to scan: ")
-file = open(filename, "r")
-sentence = file.read()
+file_name = input("Enter a filename to scan: ")
+file = open(file_name, "r")
+file_contents = file.read()
 
-char_frequency = {}
+character_frequency = {}
 
-for char in sentence:
-    if char in char_frequency:
-        char_frequency[char] += 1
+for character in file_contents:
+    if character in character_frequency:
+        character_frequency[character] += 1
     else:
-        char_frequency[char] = 1
+        character_frequency[character] = 1
 
-pprint(char_frequency, width=1)
+pprint(character_frequency, width=1)
 
-char_frequency_sorted = sorted(char_frequency.items(),
-                               key=lambda kv: kv[1],
-                               reverse=True)
-print(char_frequency_sorted[0])
+character_frequency_sorted = sorted(character_frequency.items(), key=lambda kv: kv[1], reverse=True)
+
+print(character_frequency_sorted[0])
